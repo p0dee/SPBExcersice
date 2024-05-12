@@ -39,6 +39,14 @@ struct GraphView: View {
         var body: some View {
             VStack {
                 UnevenRoundedRectangle(cornerRadii: .init(topLeading: 3, bottomLeading: 0, bottomTrailing: 0, topTrailing: 3), style: .continuous)
+                    .foregroundStyle(LinearGradient(
+                        colors: [
+                            .init(red: 0x58/255.0, green: 0xc0/255.0, blue: 0xff/255.0),
+                            .init(red: 0x1f/255.0, green: 0x8f/255.0, blue: 0xff/255.0)
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom)
+                    )
                     .scaleEffect(x: 1.0, y: isBarStretched ? 1 : 0, anchor: .bottom) //FIXME: scaleによってアニメーションをかけると、アニメーション初期にバーの角丸が潰れてしまう問題がある（角丸サイズやdurationの短さからほぼ気がづくのは不可能）
                     .animation(.easeOut(duration: 0.5), value: isBarStretched)
                 Text(data.title)
