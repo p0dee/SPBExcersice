@@ -23,7 +23,9 @@ struct OnboardingView: View {
                         //TODO: close action
                     } label: {
                         Image(systemName: "xmark")
+                            .fontWeight(.bold)
                     }
+                    .buttonStyle(CloseButtonStyle())
                 }
                 VerticalFixedSpacer(spacing: 10)
                 Text("Hello\nSpeakBUDDY")
