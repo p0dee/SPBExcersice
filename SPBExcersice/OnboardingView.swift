@@ -54,9 +54,13 @@ struct OnboardingView: View {
                         end: .init(decimalRed: 0, green: 117, blue: 255)
                     )
                 VerticalFixedSpacer(spacing: 25)
-                Button("プランに登録する") {
+                Button(action: {
                     //TODO: register action
-                }
+                }, label: {
+                    Text("プランに登録する")
+                        .frame(maxWidth: .infinity)
+                })
+                .buttonStyle(RoundedButtonStyle())
             }
             .padding(.horizontal, 20)
         }

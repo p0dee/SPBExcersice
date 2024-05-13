@@ -15,6 +15,7 @@
 		02DA03372BF2384D00C462D7 /* SwiftUI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA03362BF2384D00C462D7 /* SwiftUI+Extension.swift */; };
 		02DA03392BF2388600C462D7 /* VerticalFixedSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA03382BF2388600C462D7 /* VerticalFixedSpacer.swift */; };
 		02DA033B2BF238A100C462D7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA033A2BF238A100C462D7 /* OnboardingView.swift */; };
+		02DA033D2BF24CD000C462D7 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA033C2BF24CD000C462D7 /* RoundedButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		02DA03362BF2384D00C462D7 /* SwiftUI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Extension.swift"; sourceTree = "<group>"; };
 		02DA03382BF2388600C462D7 /* VerticalFixedSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalFixedSpacer.swift; sourceTree = "<group>"; };
 		02DA033A2BF238A100C462D7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		02DA033C2BF24CD000C462D7 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				02DA03342BECFF1D00C462D7 /* GraphView.swift */,
 				02DA03362BF2384D00C462D7 /* SwiftUI+Extension.swift */,
 				02DA03382BF2388600C462D7 /* VerticalFixedSpacer.swift */,
+				02DA033C2BF24CD000C462D7 /* RoundedButtonStyle.swift */,
 				02DA032A2BECE82D00C462D7 /* Assets.xcassets */,
 				02DA032C2BECE82D00C462D7 /* Preview Content */,
 			);
@@ -154,6 +157,7 @@
 				02DA03272BECE82800C462D7 /* SPBExcersiceApp.swift in Sources */,
 				02DA033B2BF238A100C462D7 /* OnboardingView.swift in Sources */,
 				02DA03392BF2388600C462D7 /* VerticalFixedSpacer.swift in Sources */,
+				02DA033D2BF24CD000C462D7 /* RoundedButtonStyle.swift in Sources */,
 				02DA03352BECFF1D00C462D7 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
