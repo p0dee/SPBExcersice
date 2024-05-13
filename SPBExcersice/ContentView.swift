@@ -38,6 +38,10 @@ struct ContentView: View {
             Text("レベルアップ")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .foregroundVerticalGradient(
+                    start: .init(decimalRed: 111, green: 212, blue: 255),
+                    end: .init(decimalRed: 0, green: 117, blue: 255)
+                )
             VerticalFixedSpacer(spacing: 25)
             Button("プランに登録する") {
                 //TODO: register action
@@ -54,6 +58,23 @@ struct VerticalFixedSpacer: View {
         Spacer()
             .frame(idealHeight: spacing)
             .fixedSize(horizontal: false, vertical: true)
+    }
+}
+
+extension View {
+    func foregroundVerticalGradient(start: Color, end: Color) -> some View {
+        self
+            .foregroundStyle(LinearGradient(
+                colors: [start, end],
+                startPoint: .top,
+                endPoint: .bottom)
+            )
+    }
+}
+
+extension Color {
+    init(decimalRed red: Int, green: Int, blue: Int) {
+        self = .init(red: Double(red) / 255, green: Double(green) / 255, blue: Double(blue) / 255)
     }
 }
 
