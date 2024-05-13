@@ -18,13 +18,17 @@ struct GraphView: View {
     }
     
     let datas: [Data]
+    let barSpacing: Double
     
     var body: some View {
         GeometryReader(content: { geometry in
-            HStack(alignment: .bottom) {
+            HStack(alignment: .bottom, spacing: barSpacing) {
                 ForEach(datas.indices, id: \.self) { index in
-                    BarElement(data: datas[index], expandBarAfter: 1.0 + TimeInterval(index) * 0.15)
-                        .frame(height: datas[index].value * geometry.size.height)
+                    BarElement(
+                        data: datas[index], 
+                        expandBarAfter: 1.0 + TimeInterval(index) * 0.15
+                    )
+                    .frame(height: datas[index].value * geometry.size.height)
                 }
             }
         })
@@ -62,5 +66,5 @@ struct GraphView: View {
         .init(value: 0.3, title: "3ヶ月"),
         .init(value: 0.6, title: "1年"),
         .init(value: 1.0, title: "2年"),
-    ])
+    ], barSpacing: 8)
 }
