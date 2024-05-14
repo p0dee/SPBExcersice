@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct VerticalFixedSpacer: View {
+    @Environment(\.screenSize) var screenSize
+    
     let spacing: CGFloat
+    let responsive: Bool
     
     var body: some View {
-        Spacer()
-            .frame(idealHeight: spacing)
-            .fixedSize(horizontal: false, vertical: true)
+        if responsive {
+            Spacer()
+                .responsiveFrame(idealHeight: spacing, screenSize: screenSize)
+                .fixedSize(horizontal: false, vertical: true)
+        } else {
+            Spacer()
+                .frame(idealHeight: spacing)
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
 }

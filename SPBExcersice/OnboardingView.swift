@@ -28,18 +28,20 @@ struct OnboardingView: View {
                             .fontWeight(.bold)
                     }
                     .buttonStyle(CloseButtonStyle())
+                    .responsiveScale(screenSize: screenSize, anchor: .topTrailing)
                 }
-                VerticalFixedSpacer(spacing: 10)
+                VerticalFixedSpacer(spacing: 10, responsive: true)
                 Text("Hello\nSpeakBUDDY")
                     .responsiveFont(size: 36, weight: .bold, screenSize: screenSize)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                VerticalFixedSpacer(spacing: 85)
+                VerticalFixedSpacer(spacing: 85, responsive: true)
                 ZStack(alignment: .topLeading) {
                     GeometryReader(content: { geometry in
                         Image("Protty")
                             .offset(x: -37, y: -52)
+                            .responsiveScale(screenSize: screenSize, anchor: .topLeading)
                     })
                     GraphView(
                         datas: [
@@ -52,10 +54,10 @@ struct OnboardingView: View {
                     )
                     .responsiveFont(size: 12, weight: .bold, screenSize: screenSize)
                 }
-                .frame(idealHeight: 325)
+                .responsiveFrame(idealHeight: 325, screenSize: screenSize)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 40)
-                VerticalFixedSpacer(spacing: 30)
+                VerticalFixedSpacer(spacing: 30, responsive: true)
                 Text("スピークバディで")
                     .responsiveFont(size: 20, screenSize: screenSize)
                 Text("レベルアップ")
@@ -64,7 +66,7 @@ struct OnboardingView: View {
                         start: .init(decimalRed: 111, green: 212, blue: 255),
                         end: .init(decimalRed: 0, green: 117, blue: 255)
                     )
-                VerticalFixedSpacer(spacing: 25)
+                VerticalFixedSpacer(spacing: 25, responsive: true)
                 Button(action: {
                     //TODO: register action
                 }, label: {

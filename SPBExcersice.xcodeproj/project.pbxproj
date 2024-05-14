@@ -17,6 +17,8 @@
 		02DA033B2BF238A100C462D7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA033A2BF238A100C462D7 /* OnboardingView.swift */; };
 		02DA033D2BF24CD000C462D7 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA033C2BF24CD000C462D7 /* RoundedButtonStyle.swift */; };
 		02DA033F2BF2534B00C462D7 /* CloseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA033E2BF2534B00C462D7 /* CloseButtonStyle.swift */; };
+		02DA03412BF3658700C462D7 /* ResponsiveContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA03402BF3658700C462D7 /* ResponsiveContentContainer.swift */; };
+		02DA03432BF38FE800C462D7 /* SwiftUI+Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA03422BF38FE800C462D7 /* SwiftUI+Responsive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		02DA033A2BF238A100C462D7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		02DA033C2BF24CD000C462D7 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		02DA033E2BF2534B00C462D7 /* CloseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonStyle.swift; sourceTree = "<group>"; };
+		02DA03402BF3658700C462D7 /* ResponsiveContentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveContentContainer.swift; sourceTree = "<group>"; };
+		02DA03422BF38FE800C462D7 /* SwiftUI+Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Responsive.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +72,11 @@
 				02DA033A2BF238A100C462D7 /* OnboardingView.swift */,
 				02DA03342BECFF1D00C462D7 /* GraphView.swift */,
 				02DA03362BF2384D00C462D7 /* SwiftUI+Extension.swift */,
+				02DA03422BF38FE800C462D7 /* SwiftUI+Responsive.swift */,
 				02DA03382BF2388600C462D7 /* VerticalFixedSpacer.swift */,
 				02DA033C2BF24CD000C462D7 /* RoundedButtonStyle.swift */,
 				02DA033E2BF2534B00C462D7 /* CloseButtonStyle.swift */,
+				02DA03402BF3658700C462D7 /* ResponsiveContentContainer.swift */,
 				02DA032A2BECE82D00C462D7 /* Assets.xcassets */,
 				02DA032C2BECE82D00C462D7 /* Preview Content */,
 			);
@@ -160,7 +166,9 @@
 				02DA03272BECE82800C462D7 /* SPBExcersiceApp.swift in Sources */,
 				02DA033B2BF238A100C462D7 /* OnboardingView.swift in Sources */,
 				02DA033F2BF2534B00C462D7 /* CloseButtonStyle.swift in Sources */,
+				02DA03412BF3658700C462D7 /* ResponsiveContentContainer.swift in Sources */,
 				02DA03392BF2388600C462D7 /* VerticalFixedSpacer.swift in Sources */,
+				02DA03432BF38FE800C462D7 /* SwiftUI+Responsive.swift in Sources */,
 				02DA033D2BF24CD000C462D7 /* RoundedButtonStyle.swift in Sources */,
 				02DA03352BECFF1D00C462D7 /* GraphView.swift in Sources */,
 			);
