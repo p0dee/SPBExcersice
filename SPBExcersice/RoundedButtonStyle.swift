@@ -20,7 +20,7 @@ struct RoundedButtonStyle: ButtonStyle {
             .padding(.horizontal, 32)
             .background(
                 Capsule()
-                    .fill(fillColor)
+                    .fill(fillColor.brighter(configuration.isPressed ? 0.1 : 0))
                     .stroke(borderColor, lineWidth: 1)
                     .shadow(
                         color: .black.opacity(configuration.isPressed ? 0.35 : 0.2),
