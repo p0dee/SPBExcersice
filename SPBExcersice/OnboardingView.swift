@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @Environment(\.screenSize) var screenSize
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -29,6 +31,7 @@ struct OnboardingView: View {
                 }
                 VerticalFixedSpacer(spacing: 10)
                 Text("Hello\nSpeakBUDDY")
+                    .responsiveFont(size: 36, weight: .bold, screenSize: screenSize)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -47,16 +50,16 @@ struct OnboardingView: View {
                         ],
                         barSpacing: 26
                     )
+                    .responsiveFont(size: 12, weight: .bold, screenSize: screenSize)
                 }
                 .frame(idealHeight: 325)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 40)
                 VerticalFixedSpacer(spacing: 30)
                 Text("スピークバディで")
-                    .font(.title)
+                    .responsiveFont(size: 20, screenSize: screenSize)
                 Text("レベルアップ")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .responsiveFont(size: 30, weight: .bold, screenSize: screenSize)
                     .foregroundVerticalGradient(
                         start: .init(decimalRed: 111, green: 212, blue: 255),
                         end: .init(decimalRed: 0, green: 117, blue: 255)
@@ -66,6 +69,7 @@ struct OnboardingView: View {
                     //TODO: register action
                 }, label: {
                     Text("プランに登録する")
+                        .responsiveFont(size: 16, weight: .semibold, screenSize: screenSize)
                         .frame(maxWidth: .infinity)
                 })
                 .buttonStyle(RoundedButtonStyle())
