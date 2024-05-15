@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+/// Onboarding view explains the effectiveness of the service and leads to bililng
 struct OnboardingView: View {
+    
+    /// Current screen size of app (not of device)
     @Environment(\.screenSize) var screenSize
     
     var body: some View {
         ZStack {
+            // Background gradient
             Rectangle()
                 .foregroundVerticalGradient(
                     start: .init(decimalRed: 213, green: 210, blue: 255),
@@ -19,14 +23,15 @@ struct OnboardingView: View {
                 )
                 .ignoresSafeArea()
             
+            // Content (text labels, graph)
             VStack {
-                VerticalFixedSpacer(spacing: 10, responsive: true)
                 Text("Hello\nSpeakBUDDY")
                     .responsiveFont(size: 36, weight: .bold, screenSize: screenSize)
-//                    .minimumScaleFactor(0.5) //SEで見切れる場合がある
                     .multilineTextAlignment(.center)
                     .layoutPriority(1)
+                
                 VerticalFixedSpacer(spacing: 85, responsive: true)
+                
                 ZStack(alignment: .topLeading) {
                     GeometryReader(content: { geometry in
                         Image("Protty")
@@ -47,7 +52,9 @@ struct OnboardingView: View {
                 .responsiveFrame(idealHeight: 325, screenSize: screenSize)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 40)
+                
                 VerticalFixedSpacer(spacing: 30, responsive: true)
+                
                 Text("スピークバディで")
                     .responsiveFont(size: 20, screenSize: screenSize)
                 Text("レベルアップ")
@@ -56,10 +63,12 @@ struct OnboardingView: View {
                         start: .init(decimalRed: 111, green: 212, blue: 255),
                         end: .init(decimalRed: 0, green: 117, blue: 255)
                     )
+                
                 VerticalFixedSpacer(spacing: 25, responsive: true)
             }
             .safeAreaPadding()
             
+            // Top/Bottom buttons
             VStack {
                 HStack {
                     Spacer()
