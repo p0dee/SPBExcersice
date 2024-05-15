@@ -47,7 +47,6 @@ struct ResponsiveContentContainer<Content>: View where Content: View {
                     .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude)
                     .onAppear(perform: {
                         screenSize = geometry.size
-                        print("screen size: \(screenSize)")
                     })
             })
             .ignoresSafeArea()
