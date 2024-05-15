@@ -7,12 +7,15 @@
 
 import SwiftUI
 
+/// Environment key for set/get screen size of the app
 struct ScreenSizeEnvironmentKey: EnvironmentKey {
     typealias Value = CGSize
     static var defaultValue: CGSize = .zero
 }
 
 extension EnvironmentValues {
+    
+    /// Environment value for screen size of the app (not of device screen)
     var screenSize: CGSize {
         get {
             self[ScreenSizeEnvironmentKey.self]
@@ -23,8 +26,14 @@ extension EnvironmentValues {
     }
 }
 
-struct ResponsiveContentContainer<Content>: View where Content: View {    
+/// Container view that make its holding views scaled automatically along with screen size of the app.
+/// You need to use `View.responsive...` modifiers to get benefit fron its responsive layout system.
+struct ResponsiveContentContainer<Content>: View where Content: View {
+    
+    /// Content
     var content: () -> Content
+    
+    /// Current screen size of app (not of device)
     @State private var screenSize: CGSize = .zero
     
     init(@ViewBuilder content: @escaping () -> Content) {
