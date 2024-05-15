@@ -7,26 +7,36 @@
 
 import SwiftUI
 
+/// Display bar graph with animation
+/// - Note: This is intended to be used on `OnboardingView`.
 struct GraphView: View {
+    
+    /// Graph value for each data
     struct Data: Identifiable {
         var id: String {
             title
         }
         
+        /// value (0...1)
         var value: Double
+        
+        /// title text (will be displayed below a bar)
         var title: String
     }
     
+    /// Graph value datas
     let datas: [Data]
+    
+    /// Spacing for each bars
     let barSpacing: Double
     
     var body: some View {
         GeometryReader(content: { geometry in
             HStack(alignment: .bottom, spacing: barSpacing) {
                 ForEach(datas.indices, id: \.self) { index in
-                    BarElement(
+                    Bar(
                         data: datas[index], 
-                        expandBarAfter: 1.0 + TimeInterval(index) * 0.15
+                        strechBarAfter: 1.0 + TimeInterval(index) * 0.15
                     )
                     .frame(height: datas[index].value * geometry.size.height)
                 }
@@ -34,10 +44,16 @@ struct GraphView: View {
         })
     }
     
-    private struct BarElement: View {
-        let data: Data
-        let expandBarAfter: TimeInterval
+    /// Bar view on `BarGraph`
+    private struct Bar: View {
         
+        /// Value for a bar
+        let data: Data
+        
+        /// Duration until the animation of the bar expanding starts
+        let strechBarAfter: TimeInterval
+        
+        /// `true` if the stretching animation has already started
         @State private var isBarStretched: Bool = false
         
         var body: some View {
@@ -47,12 +63,12 @@ struct GraphView: View {
                         start: .init(decimalRed: 88, green: 192, blue: 255),
                         end: .init(decimalRed: 31, green: 143, blue: 255)
                     )
-                    .scaleEffect(x: 1.0, y: isBarStretched ? 1 : 0, anchor: .bottom) //FIXME: scaleによってアニメーションをかけると、アニメーション初期にバーの角丸が潰れてしまう問題がある（角丸サイズやdurationの短さからほぼ気がづくのは不可能）
+                    .scaleEffect(x: 1.0, y: isBarStretched ? 1 : 0, anchor: .bottom)
                     .animation(.easeOut(duration: 0.5), value: isBarStretched)
                 Text(data.title)
             }
             .onAppear(perform: {
-                Timer.scheduledTimer(withTimeInterval: expandBarAfter, repeats: false) { _ in
+                Timer.scheduledTimer(withTimeInterval: strechBarAfter, repeats: false) { _ in
                     isBarStretched = true
                 }
             })
