@@ -30,11 +30,11 @@ extension EnvironmentValues {
 /// You need to use `View.responsive...` modifiers to get benefit fron its responsive layout system.
 struct ResponsiveContentContainer<Content>: View where Content: View {
     
-    /// Content
-    var content: () -> Content
-    
     /// Current screen size of app (not of device)
     @State private var screenSize: CGSize = .zero
+    
+    /// Content
+    private var content: () -> Content
     
     init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
