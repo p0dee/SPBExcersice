@@ -30,7 +30,8 @@ struct OnboardingView: View {
                     .multilineTextAlignment(.center)
                     .layoutPriority(1)
                 
-                VerticalFixedSpacer(spacing: 85, responsive: true)
+                VerticalFixedSpacer(spacing: 85)
+                    .responsiveScale()
                 
                 ZStack(alignment: .topLeading) {
                     GeometryReader(content: { geometry in
@@ -53,7 +54,8 @@ struct OnboardingView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 40)
                 
-                VerticalFixedSpacer(spacing: 30, responsive: true)
+                VerticalFixedSpacer(spacing: 30)
+                    .responsiveScale()
                 
                 Text("スピークバディで")
                     .responsiveFont(size: 20, screenSize: screenSize)
@@ -64,7 +66,8 @@ struct OnboardingView: View {
                         end: .init(decimalRed: 0, green: 117, blue: 255)
                     )
                 
-                VerticalFixedSpacer(spacing: 25, responsive: true)
+                VerticalFixedSpacer(spacing: 25)
+                    .responsiveScale()
             }
             .safeAreaPadding()
             
