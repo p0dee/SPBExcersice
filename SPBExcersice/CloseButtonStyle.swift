@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Button style for round X button
 struct CloseButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
