@@ -58,7 +58,7 @@ struct OnboardingView: View {
                     .responsiveScale()
                 
                 Text("スピークバディで")
-                    .responsiveFont(size: 20, screenSize: screenSize)
+                    .responsiveFont(size: 20, weight: .semibold, screenSize: screenSize)
                 Text("レベルアップ")
                     .responsiveFont(size: 30, weight: .bold, screenSize: screenSize)
                     .foregroundVerticalGradient(
