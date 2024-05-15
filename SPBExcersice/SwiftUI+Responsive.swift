@@ -44,10 +44,11 @@ extension View {
             )
     }
     
-    func responsiveScale(screenSize: CGSize, anchor: UnitPoint = .center) -> some View {
+    func responsiveScaleEffect(screenSize: CGSize, anchor: UnitPoint = .center, minScale: Double = 0, maxScale: Double = .greatestFiniteMagnitude) -> some View {
         let scale = scaleRatio(screenSize: screenSize)
+        let actualScale = max(minScale, min(maxScale, scale))
         return self
-            .scaleEffect(.init(width: scale, height: scale), anchor: anchor)
+            .scaleEffect(.init(width: actualScale, height: actualScale), anchor: anchor)
     }
 }
 

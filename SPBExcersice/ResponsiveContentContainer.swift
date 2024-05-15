@@ -25,17 +25,26 @@ extension EnvironmentValues {
 
 struct ResponsiveContentContainer<Content>: View where Content: View {    
     var content: () -> Content
+    @State private var screenSize: CGSize = .zero
     
     init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
     
     var body: some View {
-        GeometryReader(content: { geometry in
+        ZStack {
+            GeometryReader(content: { geometry in
+                Rectangle()
+                    .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude)
+                    .onAppear(perform: {
+                        screenSize = geometry.size
+                        print("screen size: \(screenSize)")
+                    })
+            })
+            .ignoresSafeArea()
             content()
-                .environment(\.screenSize, geometry.size)
-        })
-        .ignoresSafeArea()
+                .environment(\.screenSize, screenSize)
+        }
     }
 }
 

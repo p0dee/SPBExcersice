@@ -18,30 +18,20 @@ struct OnboardingView: View {
                     end: .init(decimalRed: 255, green: 255, blue: 255)
                 )
                 .ignoresSafeArea()
+            
             VStack {
-                HStack {
-                    Spacer()
-                    Button {
-                        //TODO: close action
-                    } label: {
-                        Image(systemName: "xmark")
-                            .fontWeight(.bold)
-                    }
-                    .buttonStyle(CloseButtonStyle())
-                    .responsiveScale(screenSize: screenSize, anchor: .topTrailing)
-                }
                 VerticalFixedSpacer(spacing: 10, responsive: true)
                 Text("Hello\nSpeakBUDDY")
                     .responsiveFont(size: 36, weight: .bold, screenSize: screenSize)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+//                    .minimumScaleFactor(0.5) //SEで見切れる場合がある
                     .multilineTextAlignment(.center)
+                    .layoutPriority(1)
                 VerticalFixedSpacer(spacing: 85, responsive: true)
                 ZStack(alignment: .topLeading) {
                     GeometryReader(content: { geometry in
                         Image("Protty")
                             .offset(x: -37, y: -52)
-                            .responsiveScale(screenSize: screenSize, anchor: .topLeading)
+                            .responsiveScaleEffect(screenSize: screenSize, anchor: .topLeading)
                     })
                     GraphView(
                         datas: [
@@ -67,6 +57,22 @@ struct OnboardingView: View {
                         end: .init(decimalRed: 0, green: 117, blue: 255)
                     )
                 VerticalFixedSpacer(spacing: 25, responsive: true)
+            }
+            .safeAreaPadding()
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        //TODO: close action
+                    } label: {
+                        Image(systemName: "xmark")
+                            .fontWeight(.bold)
+                    }
+                    .buttonStyle(CloseButtonStyle())
+                    .responsiveScaleEffect(screenSize: screenSize, anchor: .topTrailing, minScale: 1.0)
+                }
+                Spacer()
                 Button(action: {
                     //TODO: register action
                 }, label: {
@@ -76,7 +82,7 @@ struct OnboardingView: View {
                 })
                 .buttonStyle(RoundedButtonStyle())
             }
-            .padding(.horizontal, 20)
+            .safeAreaPadding()
         }
     }
 }
